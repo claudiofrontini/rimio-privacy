@@ -9,7 +9,7 @@ Documento pronto nei contenuti tecnici verificati nel progetto. Prima della pubb
 RIMIO è fornita da Claudio Frontini.
 
 Contatto privacy: frontiniclaudio@gmail.com
-Sito / Privacy Policy: [URL HTTPS DELLA PRIVACY POLICY]
+Sito / Privacy Policy: https://claudiofrontini.github.io/rimio-privacy/
 
 2. Principio generale
 
@@ -93,4 +93,3 @@ Per richieste relative alla privacy, ai dati o all’esercizio dei diritti appli
 
 Claudio Frontini
 frontiniclaudio@gmail.com
-[EVENTUALE INDIRIZZO O ALTRI DATI RICHIESTI DALLA NORMATIVA APPLICABILE]
