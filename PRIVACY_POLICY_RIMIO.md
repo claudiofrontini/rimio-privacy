@@ -48,6 +48,8 @@ Questi contenuti sono utilizzati per fornire la funzione scelta dall'utente, ad 
 
 Lo sviluppatore **non riceve automaticamente** i contenuti archiviati nell'app.
 
+La ricerca globale viene costruita localmente e non indicizza il testo OCR completo né gli identificativi sensibili esclusi dalle policy dell'app. Per le Tessere fedeltà, numero socio e valore barcode restano nel dettaglio locale ma non vengono usati come chiavi della ricerca globale; per i Contatti la ricerca globale usa nome e categoria ma non telefono, email, indirizzo o note.
+
 ## 4. Basi giuridiche
 
 Per i trattamenti che, in base alle circostanze, sono soggetti al Regolamento (UE) 2016/679 e riconducibili al titolare, le basi giuridiche possono comprendere:
@@ -80,7 +82,7 @@ Quando l'utente avvia una funzione vocale, RIMIO può richiedere accesso al Micr
 
 RIMIO utilizza le tecnologie Speech di Apple e richiede il riconoscimento sul dispositivo quando supportato. Se il riconoscimento on-device non è disponibile, l'audio può essere elaborato tramite i servizi Apple secondo le condizioni e le informative applicabili di Apple.
 
-L'ascolto viene avviato dall'utente. RIMIO non utilizza il microfono per ascolto pubblicitario o profilazione.
+L'ascolto viene avviato dall'utente. RIMIO non utilizza il microfono per ascolto pubblicitario o profilazione. La trascrizione vocale viene mantenuta temporaneamente in memoria per mostrare il feedback e completare la finalizzazione di Speech; uscendo dalla funzione viene rimossa. Il testo viene conservato nei dati locali dell'app soltanto quando l'utente lo applica a un campo o quando un comando esplicito salva il relativo contenuto.
 
 ## 8. Calendario
 
@@ -132,6 +134,8 @@ Alcune funzioni avviate dall'utente richiedono una connessione Internet. In part
 - aprire siti ufficiali di operatori di telepedaggio, streaming o altri servizi confrontabili;
 - usare i servizi Apple per ricerche di luoghi e mappe;
 - importare una ricetta o un manuale da un URL scelto dall'utente;
+
+Per le ricette importate dal web, RIMIO usa la pagina indicata per estrarre localmente gli elementi utili della ricetta. Nell'Archivio vengono conservati il contenuto strutturato necessario alla funzione (ad esempio titolo, ingredienti, preparazione e fonte) e non l'intero testo della pagina web. Quando una fonte URL viene salvata per ricette o procedure da manuale, RIMIO rimuove credenziali, parametri di query e fragment non necessari, così eventuali token o parametri temporanei non vengono mantenuti nel dato locale.
 - aprire pagine web o ricerche avviate dall'utente.
 
 Nel confronto luce e gas, RIMIO scarica il **catalogo pubblico** delle offerte. Le bollette, i consumi, i costi e il profilo ricavati dall'Archivio restano sul dispositivo e non vengono caricati automaticamente sul Portale Offerte o inviati ai fornitori.
@@ -179,6 +183,12 @@ L'utente può:
 - scegliere, per i nuovi documenti, di non conservare le immagini originali.
 
 La cancellazione complessiva dei dati locali RIMIO non dipende dall'autorizzazione al Calendario. L'app prova inoltre a rimuovere gli eventi di Calendario associati; se il permesso è stato revocato o EventKit non consente la rimozione, i dati locali vengono comunque eliminati e RIMIO segnala che eventuali eventi Apple Calendar possono richiedere una cancellazione manuale.
+
+## 16-bis. Messaggi preparati e condivisione volontaria
+
+RIMIO può preparare testi che l'utente può modificare, copiare o condividere. La generazione usa dati strutturati già minimizzati e non inserisce automaticamente il testo OCR completo del documento. Identificativi e recapiti sensibili vengono mascherati secondo le regole di privacy dell'app.
+
+RIMIO non invia automaticamente questi messaggi: copia e condivisione avvengono soltanto dopo un'azione esplicita dell'utente. La copia negli appunti è limitata al dispositivo e configurata con scadenza temporale.
 
 ## 17. Dati inviati volontariamente allo sviluppatore
 
