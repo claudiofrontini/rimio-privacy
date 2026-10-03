@@ -64,7 +64,7 @@ Referti, risultati di laboratorio e altri documenti sanitari possono contenere c
 
 RIMIO li elabora localmente soltanto quando l'utente sceglie di acquisire, importare o utilizzare tali documenti. Il contenuto sanitario non viene trasmesso automaticamente allo sviluppatore.
 
-Le funzioni di spiegazione, glossario e lettura orientativa hanno finalità esclusivamente informative ed educative. Non costituiscono diagnosi, prognosi, prescrizioni o indicazioni terapeutiche e non devono essere utilizzate per prendere decisioni cliniche senza un professionista sanitario.
+Le funzioni di spiegazione, glossario e lettura descrittiva hanno finalità esclusivamente informative ed educative. La lettura descrittiva organizza valori, unità, flag e intervalli già presenti nel referto e non formula diagnosi, possibili cause, prognosi, prescrizioni, indicazioni terapeutiche o suggerimenti di ulteriori esami. Non deve essere utilizzata per prendere decisioni cliniche senza un professionista sanitario.
 
 Qualora in futuro venissero introdotti trattamenti remoti di dati sanitari o altre funzionalità che richiedano una specifica condizione ai sensi dell'art. 9 GDPR, la presente informativa verrà aggiornata prima dell'attivazione di tali trattamenti e verrà acquisita l'eventuale manifestazione esplicita richiesta dalla normativa.
 
@@ -152,7 +152,7 @@ Questa sezione ha finalità informativa sul funzionamento del comparatore e non 
 
 Alcune funzioni possono utilizzare framework Apple e modelli disponibili sul dispositivo, inclusi i Foundation Models quando supportati.
 
-RIMIO non invia automaticamente il contenuto dei documenti personali a servizi di intelligenza artificiale di terze parti. Quando una funzione basata sui modelli Apple non è disponibile sul dispositivo, RIMIO utilizza, ove previsto, logiche locali alternative oppure la funzione non viene eseguita.
+RIMIO non invia automaticamente il contenuto dei documenti personali a servizi di intelligenza artificiale di terze parti. Quando una funzione genera o riscrive contenuti con Foundation Models, RIMIO indica nel risultato che si tratta di un'elaborazione AI locale con modello Apple sul dispositivo. Quando il modello Apple non è disponibile, RIMIO utilizza, ove previsto, logiche locali alternative e le identifica come elaborazioni basate su regole, oppure la funzione non viene eseguita.
 
 ## 15. Protezione e conservazione locale
 
@@ -174,7 +174,7 @@ L'utente può:
 - cancellare i dati locali gestiti da RIMIO tramite la sezione **Privacy e sicurezza**;
 - scegliere, per i nuovi documenti, di non conservare le immagini originali.
 
-Quando possibile, la cancellazione complessiva prova anche a rimuovere gli eventi di Calendario associati e altre attività locali create da RIMIO.
+La cancellazione complessiva dei dati locali RIMIO non dipende dall'autorizzazione al Calendario. L'app prova inoltre a rimuovere gli eventi di Calendario associati; se il permesso è stato revocato o EventKit non consente la rimozione, i dati locali vengono comunque eliminati e RIMIO segnala che eventuali eventi Apple Calendar possono richiedere una cancellazione manuale.
 
 ## 17. Dati inviati volontariamente allo sviluppatore
 
