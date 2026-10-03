@@ -100,6 +100,8 @@ RIMIO può utilizzare la posizione per funzioni avviate dall'utente, ad esempio:
 
 Il salvataggio del parcheggio non richiede un tracciamento continuo.
 
+Se l'utente associa una foto al parcheggio, RIMIO la ridimensiona e comprime localmente prima della persistenza per ridurre lo spazio occupato e la quantità di immagine conservata.
+
 Quando l'utente attiva volontariamente un promemoria di prossimità per un negozio, RIMIO registra un trigger geografico locale gestito da iOS. Per questa funzione è sufficiente l'autorizzazione alla posizione **Mentre usi l’app**; dopo la registrazione del trigger, il sistema operativo può consegnare l'avviso quando il dispositivo entra nella zona anche se RIMIO non è aperta. RIMIO non avvia un tracciamento GPS continuo in background per questa funzione.
 
 La posizione non viene utilizzata da RIMIO per pubblicità o profilazione.

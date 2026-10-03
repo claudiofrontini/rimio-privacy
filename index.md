@@ -100,7 +100,9 @@ RIMIO può utilizzare la posizione per funzioni avviate dall'utente, ad esempio:
 
 Il salvataggio del parcheggio non richiede un tracciamento continuo.
 
-Quando l'utente attiva volontariamente un promemoria di prossimità che deve funzionare anche con l'app chiusa, può essere necessaria l'autorizzazione alla posizione **Sempre**.
+Se l'utente associa una foto al parcheggio, RIMIO la ridimensiona e comprime localmente prima della persistenza per ridurre lo spazio occupato e la quantità di immagine conservata.
+
+Quando l'utente attiva volontariamente un promemoria di prossimità per un negozio, RIMIO registra un trigger geografico locale gestito da iOS. Per questa funzione è sufficiente l'autorizzazione alla posizione **Mentre usi l’app**; dopo la registrazione del trigger, il sistema operativo può consegnare l'avviso quando il dispositivo entra nella zona anche se RIMIO non è aperta. RIMIO non avvia un tracciamento GPS continuo in background per questa funzione.
 
 La posizione non viene utilizzata da RIMIO per pubblicità o profilazione.
 
@@ -109,6 +111,8 @@ La posizione non viene utilizzata da RIMIO per pubblicità o profilazione.
 Se l'utente abilita promemoria, appuntamenti, rate o scadenze, RIMIO può programmare notifiche locali sul dispositivo.
 
 Per impostazione predefinita, RIMIO utilizza contenuti generici nelle notifiche per ridurre l'esposizione di titoli, note, importi o altre informazioni personali sulla schermata di blocco. L'utente può scegliere volontariamente di mostrare contenuti più dettagliati dalla sezione **Privacy e sicurezza**.
+
+Il metadata persistente delle notifiche RIMIO conserva soltanto il tipo della notifica e un identificativo tecnico. Quando l'utente apre una notifica, gli eventuali dettagli vengono ricostruiti dal database locale soltanto dopo che l'app è attiva e, se abilitato, dopo lo sblocco tramite il sistema di protezione dell'app. Le versioni precedenti che potevano contenere dettagli duplicati nel payload vengono sanificate all'apertura dell'app.
 
 Le notifiche possono essere disattivate dalle impostazioni dell'app o dalle Impostazioni di iPhone.
 
