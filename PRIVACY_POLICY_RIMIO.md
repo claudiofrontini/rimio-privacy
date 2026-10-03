@@ -66,7 +66,7 @@ Referti, risultati di laboratorio e altri documenti sanitari possono contenere c
 
 RIMIO li elabora localmente soltanto quando l'utente sceglie di acquisire, importare o utilizzare tali documenti. Il contenuto sanitario non viene trasmesso automaticamente allo sviluppatore.
 
-Le funzioni di spiegazione, glossario e lettura descrittiva hanno finalità esclusivamente informative ed educative. La lettura descrittiva organizza valori, unità, flag e intervalli già presenti nel referto e non formula diagnosi, possibili cause, prognosi, prescrizioni, indicazioni terapeutiche o suggerimenti di ulteriori esami. Non deve essere utilizzata per prendere decisioni cliniche senza un professionista sanitario.
+Le funzioni di spiegazione, glossario e lettura descrittiva hanno finalità esclusivamente informative ed educative. La lettura descrittiva organizza valori, unità, flag e intervalli già presenti nel referto e non formula diagnosi, possibili cause, prognosi, prescrizioni, indicazioni terapeutiche o suggerimenti di ulteriori esami. Le spiegazioni generate vengono ulteriormente minimizzate per evitare di replicare nomi di professionisti, recapiti, codici fiscali o altri dati amministrativi non necessari. Non deve essere utilizzata per prendere decisioni cliniche senza un professionista sanitario.
 
 Qualora in futuro venissero introdotti trattamenti remoti di dati sanitari o altre funzionalità che richiedano una specifica condizione ai sensi dell'art. 9 GDPR, la presente informativa verrà aggiornata prima dell'attivazione di tali trattamenti e verrà acquisita l'eventuale manifestazione esplicita richiesta dalla normativa.
 
@@ -183,6 +183,8 @@ L'utente può:
 - scegliere, per i nuovi documenti, di non conservare le immagini originali.
 
 La cancellazione complessiva dei dati locali RIMIO non dipende dall'autorizzazione al Calendario. L'app prova inoltre a rimuovere gli eventi di Calendario associati; se il permesso è stato revocato o EventKit non consente la rimozione, i dati locali vengono comunque eliminati e RIMIO segnala che eventuali eventi Apple Calendar possono richiedere una cancellazione manuale.
+
+La cancellazione complessiva rimuove anche eventuali archivi locali legacy (`default.store` e relativi file di supporto) rimasti da versioni precedenti o da un upgrade interrotto, oltre allo stato tecnico per-ID e alle notifiche gestite da RIMIO. Le preferenze dell'utente relative a protezione dell'app, visibilità dei dettagli nelle notifiche e conservazione delle immagini originali restano invece invariate e possono essere modificate separatamente nella sezione **Privacy e sicurezza**.
 
 ## 16-bis. Messaggi preparati e condivisione volontaria
 
