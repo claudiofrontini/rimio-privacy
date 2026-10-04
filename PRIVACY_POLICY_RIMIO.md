@@ -1,6 +1,6 @@
 # Privacy Policy di RIMIO
 
-**Ultimo aggiornamento: 3 ottobre 2026**
+**Ultimo aggiornamento: 4 ottobre 2026**
 
 La presente informativa descrive come RIMIO tratta dati e permessi nell'ambito delle funzionalità disponibili nell'app iOS. RIMIO è progettata secondo un approccio **local-first**: i documenti e la maggior parte dei dati inseriti dall'utente restano sul dispositivo e non vengono trasmessi automaticamente allo sviluppatore.
 
@@ -134,9 +134,11 @@ Alcune funzioni avviate dall'utente richiedono una connessione Internet. In part
 - aprire siti ufficiali di operatori di telepedaggio, streaming o altri servizi confrontabili;
 - usare i servizi Apple per ricerche di luoghi e mappe;
 - importare una ricetta o un manuale da un URL scelto dall'utente;
+- aprire pagine web o ricerche avviate dall'utente.
 
 Per le ricette importate dal web, RIMIO usa la pagina indicata per estrarre localmente gli elementi utili della ricetta. Nell'Archivio vengono conservati il contenuto strutturato necessario alla funzione (ad esempio titolo, ingredienti, preparazione e fonte) e non l'intero testo della pagina web. Quando una fonte URL viene salvata per ricette o procedure da manuale, RIMIO rimuove credenziali, parametri di query e fragment non necessari, così eventuali token o parametri temporanei non vengono mantenuti nel dato locale.
-- aprire pagine web o ricerche avviate dall'utente.
+
+Quando l'utente sceglie di cercare un manuale tramite Google, RIMIO mostra prima la query esatta che verrà inviata e richiede una conferma esplicita. Alla ricerca non vengono allegati automaticamente documenti, testo OCR o altri record dell'Archivio.
 
 Nel confronto luce e gas, RIMIO scarica il **catalogo pubblico** delle offerte. Le bollette, i consumi, i costi e il profilo ricavati dall'Archivio restano sul dispositivo e non vengono caricati automaticamente sul Portale Offerte o inviati ai fornitori.
 
@@ -190,7 +192,9 @@ La cancellazione complessiva rimuove anche eventuali archivi locali legacy (`def
 
 RIMIO può preparare testi che l'utente può modificare, copiare o condividere. La generazione usa dati strutturati già minimizzati e non inserisce automaticamente il testo OCR completo del documento. Identificativi e recapiti sensibili vengono mascherati secondo le regole di privacy dell'app.
 
-RIMIO non invia automaticamente questi messaggi: copia e condivisione avvengono soltanto dopo un'azione esplicita dell'utente. La copia negli appunti è limitata al dispositivo e configurata con scadenza temporale.
+RIMIO non invia automaticamente questi messaggi: copia e condivisione avvengono soltanto dopo un'azione esplicita dell'utente. Per i riepiloghi dei Dossier viene mostrata un'anteprima modificabile prima di aprire la share sheet di iOS.
+
+La copia negli appunti è limitata al dispositivo e configurata con scadenza temporale. Quando RIMIO perde il primo piano, la durata residua del contenuto copiato dall'app viene ridotta; RIMIO interviene solo se la clipboard contiene ancora il valore copiato dall'app e non cancella un contenuto che l'utente o un'altra app abbia sostituito successivamente.
 
 ## 17. Dati inviati volontariamente allo sviluppatore
 
@@ -237,6 +241,12 @@ Nei casi in cui il Regolamento (UE) 2016/679 sia applicabile, l'interessato può
 - revoca di un eventuale consenso, senza pregiudicare la liceità del trattamento effettuato prima della revoca.
 
 Poiché i contenuti archiviati da RIMIO sono principalmente conservati sul dispositivo e non sono accessibili automaticamente allo sviluppatore, molte operazioni di consultazione, modifica e cancellazione possono essere effettuate direttamente nell'app.
+
+Da **Privacy e sicurezza → Esporta i miei dati** l'utente può inoltre generare volontariamente una copia strutturata in formato JSON dei dati locali gestiti da RIMIO. L'esportazione viene preparata sul dispositivo e non viene caricata automaticamente su server RIMIO. Può includere dati personali, sanitari, finanziari, contatti, posizione e le immagini che l'utente ha scelto di conservare. Gli identificativi tecnici legati a notifiche e Calendario non vengono inclusi perché non sono portabili tra dispositivi. RIMIO non applica una cifratura propria al file esportato: la protezione della copia dopo il salvataggio dipende quindi dalla destinazione scelta dall'utente.
+
+Da **Privacy e sicurezza → Ripristina da file RIMIO** l'utente può selezionare una precedente esportazione RIMIO. Prima di qualsiasi modifica locale l'app verifica formato, versione dello schema, struttura, identificativi, dimensione del file e limiti di sicurezza del contenuto e mostra un'anteprima. La lettura del file è limitata e viene eseguita separatamente dall'interfaccia principale per ridurre il rischio che file corrotti o eccezionalmente grandi rendano l'app non responsiva. L'utente può scegliere di **Unire** i record, lasciando invariati quelli che hanno già lo stesso identificativo locale, oppure di **Sostituire** i dati RIMIO presenti sul dispositivo. Il salvataggio SwiftData viene eseguito come operazione controllata e, se il commit non riesce, le modifiche della transazione vengono annullate e il rollback viene verificato sugli identificativi locali. Dopo un commit riuscito RIMIO usa un marker temporaneo locale, protetto con Data Protection completa ed escluso dai backup, per poter completare in modo idempotente la ricostruzione di promemoria e altri effetti locali se l'app viene interrotta in quel momento; il marker viene eliminato al termine della riconciliazione. Le preferenze di protezione e privacy del dispositivo corrente, incluse App Lock, dettaglio delle notifiche e conservazione delle immagini, non vengono sovrascritte dal file importato. Gli appuntamenti vengono ripristinati nell'app ma non vengono ricreati automaticamente nel Calendario Apple, per evitare duplicazioni di eventi esterni. In caso di sostituzione, RIMIO tenta inoltre di rimuovere gli eventi Calendario precedentemente collegati, se dispone dell'autorizzazione necessaria.
+
+Per le operazioni che scrivono nuovi dati sul dispositivo, RIMIO verifica inoltre di poter mantenere un margine locale di sicurezza. Se lo spazio è insufficiente, l'app può rimuovere esclusivamente cache ricreabili proprie e, se ciò non basta, interrompe il nuovo salvataggio prima del commit oppure gestisce l'errore di sistema con rollback. Questa gestione non comporta la cancellazione automatica di documenti, immagini o altri dati personali già archiviati. Export, restore e download temporanei possono essere rifiutati finché l'utente non libera spazio sufficiente.
 
 Per richieste ulteriori è possibile utilizzare il contatto privacy indicato nella presente informativa.
 
