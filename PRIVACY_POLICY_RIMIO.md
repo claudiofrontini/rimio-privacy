@@ -200,7 +200,9 @@ Tali dati vengono utilizzati per rispondere alla richiesta, gestire assistenza o
 
 ## 18. Permessi di sistema e revoca
 
-Fotocamera, Foto, Microfono, Riconoscimento vocale, Notifiche, Calendario e Posizione vengono utilizzati soltanto nelle funzioni che ne hanno bisogno e secondo le autorizzazioni concesse dall'utente.
+Fotocamera, Foto, Microfono, Riconoscimento vocale, Notifiche, Calendario e Posizione vengono utilizzati soltanto nelle funzioni che ne hanno bisogno e secondo le autorizzazioni concesse dall'utente. RIMIO non richiede questi permessi in blocco all'avvio: la richiesta avviene quando l'utente attiva volontariamente la relativa funzione.
+
+In particolare, l'accesso completo al Calendario viene utilizzato per creare, ritrovare, aggiornare ed eliminare gli appuntamenti RIMIO sincronizzati; la Posizione mentre usi l'app viene utilizzata per parcheggio, ricerca di luoghi/negozi e attivazione dei promemoria di prossimità scelti dall'utente. Fotocamera e Foto vengono utilizzate soltanto per i contenuti che l'utente decide di acquisire o selezionare.
 
 I permessi possono essere modificati o revocati dalle Impostazioni di iPhone. Dopo la revoca, alcune funzioni potrebbero non essere disponibili.
 
